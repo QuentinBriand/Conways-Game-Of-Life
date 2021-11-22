@@ -137,6 +137,14 @@ function mousePressed() {
     pressing = true;
     paintingArrayCoord = [];
     modifiedGrid = grid;
+    let highlightX = Math.floor(mouseX / resolutionX);
+    let highlightY = Math.floor(mouseY / resolutionY);
+
+    modifiedGrid[highlightX][highlightY] = 1;
+    let coords = [highlightX, highlightY];
+
+    let indx = (highlightX * rows + highlightY);
+    paintingArrayCoord[indx] = coords;
   }
 }
 
